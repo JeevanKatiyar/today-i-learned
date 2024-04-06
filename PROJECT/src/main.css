@@ -1,0 +1,259 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #292524;
+  color: #fafaf9;
+  font-family: "sono", sans-serif;
+  padding: 48px 64px;
+}
+
+/* to hide the form  */
+.hidden {
+  display: none !important;
+}
+
+.message {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 32px;
+  font-weight: 600;
+  margin-top: 24px;
+}
+
+.disputed {
+  color: #ef4444;
+  font-weight: 600;
+  margin-right: 10px;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between;
+  padding: 10px; */
+  gap: 16px;
+}
+/* descendent seletor for selecting images */
+
+.logo img {
+  height: 68px;
+  width: 68px;
+}
+/* note:Flex box used to align object side by side,
+  properties:
+  display: flex [displays element side by side]
+  align-element: center
+  justify-content: space-between [provide space between the element] 
+*/
+/* ELEMENT */
+h1 {
+  font-size: 42px;
+  font-family: "coiny", "sans-serif";
+  text-transform: uppercase;
+  /* text-align: center; */
+  line-height: 1;
+  margin-top: 6px;
+}
+.category {
+  margin-bottom: 16px;
+}
+
+.btn {
+  border: none;
+  border-radius: 100px;
+  background-image: linear-gradient(135deg, #3b82f6, #ef4444, #16a34a, #eab308);
+  font-family: "coiny", "sans-serif";
+  line-height: 1;
+  text-transform: uppercase;
+  color: inherit;
+  font-size: 17px;
+  padding: 16px 0px 13px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.btn:hover {
+  transform: scale(110%) rotate(-2deg); /* after hover effect button appears to increase in size + rotate rotates the button */
+}
+
+.btn-large {
+  font-size: 20px;
+  padding: 20px 32px 17px;
+}
+
+.btn-all {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.btn-category {
+  width: 100%;
+  background-image: none;
+}
+.category {
+  margin-bottom: 16px;
+}
+
+/* LAYOUT*/
+
+#root {
+  max-width: 1500px;
+  margin: 0 auto;
+  /* text-align: center; */
+}
+
+.header {
+  margin: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 48px;
+  height: calc(100vh - 48px - 68px - 40px);
+}
+/* making it compatible for small screen converting it to grid so single item is available on screen*/
+@media (max-width: 900px) {
+  .main {
+    grid-template-columns: 1fr;
+  }
+}
+
+section {
+  overflow: scroll;
+  padding-bottom: 40px;
+}
+/* emoji = vote */
+.emoji {
+  margin-left: auto;
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0; /* to properly arrange emoji-button side by side */
+}
+
+.emoji button {
+  background-color: #78716c;
+  border: none;
+  border-radius: 100px;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-family: inherit;
+  color: inherit;
+}
+.emoji button:hover {
+  background-color: #292524;
+}
+.emoji button:disabled {
+  background-color: #44403c;
+}
+
+.tag {
+  text-transform: uppercase;
+  font-size: 14px;
+  font-family: "coiny", "sans-serif";
+  padding-top: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 100px;
+}
+
+ul {
+  list-style: none;
+}
+
+.source:link,
+.source:visited {
+  color: #a8a29e;
+  text-decoration: none;
+  margin-left: 12px;
+  transition: 0.3s;
+}
+.source:hover,
+.source:active {
+  color: #3b82f6;
+}
+
+.fact-form {
+  background-color: #44403c;
+  margin-bottom: 40px;
+  padding: 16px 32px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-radius: 16px;
+}
+
+.fact-form input,
+.fact-form select {
+  width: 220px;
+  background-color: #78716c;
+  font-family: inherit;
+  color: inherit;
+  border: none;
+  border-radius: 100px;
+  padding: 16px;
+  font-size: 18px;
+}
+
+/* for changing color of the text inside the placeholder */
+.fact-form input::placeholder {
+  color: #d6d3d1;
+}
+
+.fact-form span {
+  font-size: 18px;
+  font-weight: 600;
+  margin-right: 18px;
+}
+
+.fact-form input:first-child {
+  flex-grow: 1;
+}
+
+.fact {
+  font-size: 20px;
+  line-height: 1.4;
+  background-color: #44403c;
+  margin-bottom: 16px;
+  padding: 16px 24px;
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  border-radius: 1px;
+  letter-spacing: -1px;
+}
+/* NOTE:
+using media queries tool for responsive web design */
+
+@media (max-width: 1200px) {
+  .fact {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px; /* [reducing the space] */
+  }
+}
+@media (max-width: 1000px) {
+  body {
+    padding: 32px 48px;
+  }
+
+  .fact-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .fact-form input,
+  .fact-form select {
+    width: auto;
+  }
+}
