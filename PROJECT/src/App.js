@@ -301,8 +301,9 @@ function Fact({ fact, setFacts }) {
       <span
         className="tag"
         style={{
-          backgroundColor: CATEGORIES.find((cat) => cat.name === fact.category),
+          // backgroundColor: CATEGORIES.find((cat) => cat.name === fact.category),
           // .color,
+          backgroundColor: "#16a34a",
         }}
       >
         {fact.category}
