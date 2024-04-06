@@ -64,7 +64,8 @@ h1 {
 .btn {
   border: none;
   border-radius: 100px;
-  background-image: linear-gradient(135deg, #3b82f6, #ef4444, #16a34a, #eab308);
+  background-image: linear-gradient(135deg, #3b82f6, #ef4444);
+
   font-family: "coiny", "sans-serif";
   line-height: 1;
   text-transform: uppercase;
